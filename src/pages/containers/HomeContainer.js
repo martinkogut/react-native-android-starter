@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as Color from '../../constants/colors';
+import * as COLOR from '../../constants/colors';
 import { AppRegistry, StyleSheet, View, Text, Navigator } from 'react-native';
 
 export default class HomeContainer extends Component {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     instructions: {
         textAlign: 'center',
-        color: Color.md_blue_grey_500,
+        color: COLOR.md_blue_grey_500,
         marginBottom: 5,
     },
 });
