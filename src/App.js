@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import * as Color from './constants/colors';
-import Map from './pages/containers/MapContainer';
 import Home from './pages/containers/HomeContainer';
+import Map from './pages/containers/MapContainer';
+import Login from './pages/containers/LoginContainer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AppRegistry, StyleSheet, Text, DrawerLayoutAndroid, ToolbarAndroid, TouchableHighlight, Navigator, View } from 'react-native';
 
@@ -15,11 +16,14 @@ export default class App extends Component {
 
         let drawerListItems = (
             <View style={styles.drawer}>
-                <TouchableHighlight onPress={ () => onItemSelected('Home', 'This is the about page!') }>
+                <TouchableHighlight onPress={ () => onItemSelected('Home', 'This is the Home page!') }>
                     <Text style={styles.drawerItem}>Home</Text>
                 </TouchableHighlight>
-                <TouchableHighlight onPress={ () => onItemSelected('Map', 'This is the about page!') }>
+                <TouchableHighlight onPress={ () => onItemSelected('Map', 'This is the Map page!') }>
                     <Text style={styles.drawerItem}>Map</Text>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={ () => onItemSelected('Login', 'This is the Login page!') }>
+                    <Text style={styles.drawerItem}>Login</Text>
                 </TouchableHighlight>
             </View>
         );
@@ -50,6 +54,8 @@ export default class App extends Component {
                     return (<Home navigator={navigator} />);
                 case 'Map':
                     return (<Map navigator={navigator} />);
+                case 'Login':
+                    return (<Login />);
                 default:
                     return(<Text>PAGE NOT FOUND</Text>);
             }
@@ -96,10 +102,12 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         width: '100%',
         color: Color.md_white_1000,
-        backgroundColor: Color.md_blue_grey_500
+        backgroundColor: Color.md_blue_grey_500,
+        borderBottomColor: Color.md_blue_grey_400,
+        borderBottomWidth: 1,
     },
     toolbar: {
-        backgroundColor: '#a9a9a9',
+        backgroundColor: Color.md_blue_grey_500,
         height: 56,
     },
 });
